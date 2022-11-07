@@ -18,7 +18,6 @@ function App() {
     setWrongGuess([])
     setRightGuess([])
     setWord(Words[Math.floor(Math.random() * Words.length)].toUpperCase())
-    console.log(score)
     setScore(score + 1)
   }
 
@@ -26,7 +25,6 @@ function App() {
   const [wrongGuess, setWrongGuess] = useState([])
   const [rightGuess, setRightGuess] = useState([])
 
-  console.log(rightGuess.length);
   const addLetter = (letter) => {
     if(guessedLetters.includes(letter)) return
 
@@ -42,7 +40,6 @@ function App() {
   }
 
     let visible = false
-    console.log(word)
     let uniqueLetters = word.split("").filter((item, index) => word.split("").indexOf(item) === index);
     if(wrongGuess.length>=6 || rightGuess.length===uniqueLetters.length)
     {
