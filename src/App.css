@@ -1,38 +1,342 @@
-.App {
-  text-align: center;
+.container{
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.hangman{
+  position: relative;
+  width: 360px;
+  height: 472px; 
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.stand{
+  position: absolute;
+  left: 20%;
+  top: 12%;
+  border-left: 0.3em solid black;
+  height: 75%;
+  width: 0;
+}
+.base{
+  position: absolute;
+  border-bottom: 0.3em solid black;
+  left: 13%;
+  top: 87%;
+  width: 65%;
+}
+.top{
+  position: absolute;
+  border-top: 0.3em solid black;
+  left: 20%;
+  width: 45%;
+  top: 12%;
+}
+.hanger{
+  position: absolute;
+  border-right: 0.3em solid black;
+  left: 65%;
+  top: 12%;
+  height: 5%;
+  width: 0;
+}
+.neck{
+  position: absolute;
+  border-right: 0.2em solid black;
+  left: 65%;
+  top: 30%;
+  height: 25%;
+  width: 0;
+  overflow: hidden;
+}
+.lefthand{
+  position: absolute;
+  border-right: 0.2em solid black;
+  left: 65%;
+  top:  30%;
+  height: 15%;
+  width: 0;
+  transform: rotate(-45deg);
+  transform-origin: right bottom;
+}
+.righthand{
+  position: absolute;
+  border-right: 0.2em solid black;
+  left: 65%;
+  top: 30%;
+  height: 15%;
+  width: 0;
+  transform: rotate(45deg);
+  transform-origin: left bottom;
+}
+.rightleg{
+  position: absolute;
+  border-right: 0.2em solid black;
+  left: 65%;
+  top: 55%;
+  height: 15%;
+  width: 0;
+  transform: rotate(-45deg);
+  transform-origin: left top;
+}
+.leftleg{
+  position: absolute;
+  border-right: 0.2em solid black;
+  left: 65%;
+  top: 55%;
+  height: 15%;
+  width: 0;
+  transform: rotate(45deg);
+  transform-origin: right top;
+}
+.head{
+  position: absolute;
+  border: 0.2em solid black;
+  background-color: black;
+  border-radius: 50%;
+  height: 5rem;
+  min-width: 5rem;
+  left: 54%;
+  top: 17%;
+  width: 0;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.combine{
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.blank{
+  height: 10vh;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.5);
+  width: 50vw; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  gap: 1vw;
+  font-weight: bolder;
+}
+.hangWord{
+  height: 10vh;
+  padding-bottom: 10px;
+  width: 100%; 
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.2rem;
+  gap: 1vw;
+  position: absolute;
+  font-weight: bolder;
+}
+
+.blankHead{
+  height: 10vh;
+  text-decoration: underline;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.5);
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: indigo;
+}
+.hangblankHead{
+  display: none;
+  height: 10vh;
+  text-decoration: underline;
+  font-size: 1.5rem;
+  padding-top: 10px;
+  text-align: center;
+  justify-content: space-around;
+  color: indigo;
+}
+
+.letter{
+  border-bottom: 0.1em solid black;
+}
+.keyboard{
+  width: 50vw;
+  z-index: 10;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 0.5rem;
+}
+.key{
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  transition: scale 0.5s ease;
+}
+.key:hover:not(:disabled){
+  scale: 1.1;
+  cursor: pointer;
+  background-color: rgba(206, 12, 12, 0.253);
+}
+.key:disabled{
+  background-color: rgba(206, 12, 12, 0.253);
+  border: none;
+}
+
+.game{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
-
-.App-link {
-  color: #61dafb;
+.gameOver{
+  width: 40%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2em;
+  border-radius: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  animation: animate 2s ease;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes animate{
+  0%{
+    opacity: 0;
+    scale: 0.8;
   }
-  to {
-    transform: rotate(360deg);
+  100%{
+    opacity: 1;
+    scale: 1;
+    rotate: 360deg;
+  }
+}
+.alert{
+  color: red;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  font-size: 2em;
+  font-weight: bolder;
+}
+.btn{
+  padding: 1em 2em;
+  background-color: #03e0f484;
+  border: none;
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 1em;
+  margin-right: 1em;
+  transition: scale 1.5s;
+  font-size: large;
+}
+.btn:hover{
+  scale: 1.2;
+  cursor: pointer;
+  background-color: rgba(206, 12, 12, 0.253);
+}
+.score{
+  color: rgb(67, 48, 65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  margin-top: 1em;
+  position: relative;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.scoredigit{
+  color: #045749;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .gameOver{
+    width: 90vw;
+  }
+  .alert{
+    font-size: 1.5em;
+  }
+  .score{
+    display: none;
+  }
+  .blank, .blankHead{
+    display: none;
+  }
+  .keyboard{
+    width: 100vw;
+    gap: 0;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    height: 25vh;
+  }
+  .key{
+    font-size: 1em;
+    border-radius: 0;
+  }
+  .hangman{
+    border-radius: 0;
+  }
+  .hangWord{
+    display: flex;
+  }
+  .hangblankHead{
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 750px) and (min-width: 601px) {
+  .gameOver{
+    width: 80vw;
+  }
+  .keyboard{
+    width: 40vw;
+    grid-template-columns: auto auto auto auto;
+  }
+  .key{
+    font-size: 1em;
+  }
+  .blank, .blankHead{
+    width: 40vw;
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-height: 480px){
+  .keyboard{
+    height: 90vh;
+  }
+  .gameOver{
+    height: 60vh;
+  }
+  .alert{
+    font-size: 1.5em;
   }
 }

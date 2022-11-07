@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Devesh24.github.io/my-app",
   "name": "hangman",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "vanilla-tilt": "^1.7.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
