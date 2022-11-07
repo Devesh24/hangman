@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hangman/static/css/main.2a78f48f.css",
+    "main.js": "/hangman/static/js/main.30d1ea9e.js",
+    "static/js/787.20ace30e.chunk.js": "/hangman/static/js/787.20ace30e.chunk.js",
+    "index.html": "/hangman/index.html",
+    "main.2a78f48f.css.map": "/hangman/static/css/main.2a78f48f.css.map",
+    "main.30d1ea9e.js.map": "/hangman/static/js/main.30d1ea9e.js.map",
+    "787.20ace30e.chunk.js.map": "/hangman/static/js/787.20ace30e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2a78f48f.css",
+    "static/js/main.30d1ea9e.js"
+  ]
+}
