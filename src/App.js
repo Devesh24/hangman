@@ -65,22 +65,6 @@ function App() {
       visible = true;
     }
 
-    // useEffect(() => {
-    //   const handler = (elem) => {
-    //     const key = elem.key
-
-    //     if(!key.match(/^[a-z]$/)) return
-    //     elem.preventDefault()
-    //     addLetter(key.toUpperCase())
-    //   }
-
-    //   document.addEventListener("keypress", handler)
-
-    //   return ()=>{
-    //     document.removeEventListener("keypress", handler)
-    //   }
-    //   // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, [guessedLetters])
     
   return (
     <>
