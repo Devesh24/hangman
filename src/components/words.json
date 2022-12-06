@@ -1,49 +1,174 @@
 [
-  "Dog",
-  "Tortoise",
-  "Turtle",
-  "Rabbit",
-  "Parrot",
-  "Cat",
-  "Kitten",
-  "Fish",
-  "Mouse",
-  "Cow",
-  "Duck",
-  "Pig",
-  "Goat",
-  "Crab",
-  "Deer",
-  "Bee",
-  "Sheep",
-  "Turkey",
-  "Dove",
-  "Chicken",
-  "Horse",
-  "Crow",
-  "Peacock",
-  "Sparrow",
-  "Goose",
-  "Pigeon",
-  "Hawk",
-  "Eagle",
-  "Raven",
-  "Flamingo",
-  "Seagull",
-  "Ostrich",
-  "Penguin",
-  "Owl",
-  "Woodpecker",
-  "Squirrel",
-  "Chimpanzee",
-  "Ox",
-  "Lion",
-  "Panda",
-  "Kangaroo",
-  "Monkey",
-  "Elephant",
-  "Leopard",
-  "Hippopotamus",
-  "Giraffe",
-  "Fox"
+  {
+    "name": "Dog", 
+    "hint": "Only mammals with unique nose prints."
+  },
+  {
+    "name": "Tortoise",
+    "hint": "Water animal with a hard shell."
+  },
+  {
+    "name": "Turtle",
+    "hint": "Water animal with a hard shell."
+  },
+  {
+    "name": "Rabbit",
+    "hint": "Long Eared, Fast."
+  },
+  {
+    "name": "Parrot",
+    "hint": "A bird that can mimic humans."
+  },
+  {
+    "name": "Cat",
+    "hint": "Domestic animal. Lived with people for around 7,000 years."
+  },
+  {
+    "name": "Kitten",
+    "hint": "Domestic animal. Lived with people for around 7,000 years."
+  },
+  {
+    "name": "Fish",
+    "hint": "Aquatic animals that lay eggs."
+  },
+  {
+    "name": "Mouse",
+    "hint": "Small mammal with large tail. Can be easily found at home."
+  },
+  {
+    "name": "Cow",
+    "hint": "Domestic animal. Provides an item of great usage."
+  },
+  {
+    "name": "Duck",
+    "hint": "Small, short-necked water animal."
+  },
+  {
+    "name": "Pig",
+    "hint": "Stout-bodied, short-legged, omnivorous mammals, with thick skin usually sparsely coated with short bristles."
+  },
+  {
+    "name": "Goat",
+    "hint": "The first animals domesticated by man in 10,000 B.C."
+  },
+  {
+    "name": "Crab",
+    "hint": "Poisonous sea animal."
+  },
+  {
+    "name": "Honeybee",
+    "hint": "Can flap their wings 200 times every second. Love flowers."
+  },
+  {
+    "name": "Sheep",
+    "hint": "Domestic animal which provide wool."
+  },
+  {
+    "name": "Chicken",
+    "hint": "Lays about 260 eggs per year."
+  },
+  {
+    "name": "Horse",
+    "hint": "Use facial expressions to communicate with each other. Used as a ride."
+  },
+  {
+    "name": "Crow",
+    "hint": "Have the largest brain to body ratio of any bird."
+  },
+  {
+    "name": "Peacock",
+    "hint": "Colorful ground-feeders that eat insects, plants, and small creatures."
+  },
+  {
+    "name": "Sparrow",
+    "hint": "Very sociable birds, often nesting in colonies."
+  },
+  {
+    "name": "Pigeon",
+    "hint": "First bird to deliver messages"
+  },
+  {
+    "name": "Hawk",
+    "hint": "Intelligent birds who have visual acuity (the ability to see clearly) is eight times that of ours."
+  },
+  {
+    "name": "Eagle",
+    "hint": "Birds with eyes at least four times sharper than a human's."
+  },
+  {
+    "name": "Raven",
+    "hint": "Highly intelligent animals and can use their beaks to rip objects open, helping them find both food and shelter."
+  },
+  {
+    "name": "Flamingo",
+    "hint": "Birds that can only eat when its head is upside down."
+  },
+  {
+    "name": "Seagull",
+    "hint": "Birds which are very attentive and caring parents."
+  },
+  {
+    "name": "Ostrich",
+    "hint": "Birds that do not fly."
+  },
+  {
+    "name": "Penguin",
+    "hint": "The only bird that can swim, and walks upright but cannot fly."
+  },
+  {
+    "name": "Owl",
+    "hint": "They dont have eyeballs, they have eye tubes, found at night."
+  },
+  {
+    "name": "Woodpecker",
+    "hint": "Have sharp and strong beaks for effective drilling into the trunk."
+  },
+  {
+    "name": "Squirrel",
+    "hint": "Quite adaptive, they live anywhere they can make a home, from tundra to tropical rainforest terrains."
+  },
+  {
+    "name": "Chimpanzee",
+    "hint": "Have fingerprints similar to humans."
+  },
+  {
+    "name": "Ox",
+    "hint": "Can pull heavier loads, and pull for a longer period of time than horses depending on weather conditions."
+  },
+  {
+    "name": "Lion",
+    "hint": "Carnivores, which are at the top of the food chain."
+  },
+  {
+    "name": "Panda",
+    "hint": "Smaller than a mouse and weighs about four ounces at birth."
+  },
+  {
+    "name": "Kangaroo",
+    "hint": "Can jump very high. they cant fart."
+  },
+  {
+    "name": "Monkey",
+    "hint": "Intelligent animals that are good at solving problems. Mostly live in groups."
+  },
+  {
+    "name": "Elephant",
+    "hint": "Largest, terrestrial herbivorous mammals in the world."
+  },
+  {
+    "name": "Leopard",
+    "hint": "Powerful mammals, like to live alone, skilled climbers."
+  },
+  {
+    "name": "Hippopotamus",
+    "hint": "Their closest living relatives are the aquatic mammals: whales, dolphins and tortoises."
+  },
+  {
+    "name": "Giraffe",
+    "hint": "Has seven bones in its neck (the same as a human, but they are much larger)."
+  },
+  {
+    "name": "Fox",
+    "hint": "The only type of dog capable of retracting their claws like cats do."
+  }
 ]

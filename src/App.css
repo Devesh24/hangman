@@ -146,17 +146,39 @@
 
 .blankHead{
   height: 10vh;
-  text-decoration: underline;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 0.8rem;
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.5);
   width: 50vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-size: 2rem;
   color: indigo;
+}
+.blankHeadName{
+  margin-left: 2rem;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.blankHeadIcon{
+  margin-right: 1rem;
+  background-color: rgb(214, 72, 72);
+  border-radius: 50%;
+  padding: 5px;
+  border: none;
+  font-size: 2rem;
+}
+.blankHeadIcon:hover{
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer; 
+}
+.mobileIcon{
+  position: absolute;
+  margin-right: 0.5rem;
+  right: 0;
+  display: none;
 }
 .hangblankHead{
   display: none;
@@ -209,18 +231,20 @@
   height: 100vh;
 }
 .gameOver{
-  width: 40%;
+  width: 50%;
   height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
   gap: 2em;
   border-radius: 0.8rem;
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   animation: animate 2s ease;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
 }
 @keyframes animate{
   0%{
@@ -234,9 +258,9 @@
   }
 }
 .alert{
-  color: red;
+  color: rgb(144, 52, 52);
   text-transform: uppercase;
-  letter-spacing: .3em;
+  letter-spacing: .15em;
   font-size: 2em;
   font-weight: bolder;
 }
@@ -285,10 +309,7 @@
   .alert{
     font-size: 1.5em;
   }
-  .score{
-    display: none;
-  }
-  .blank, .blankHead{
+  .blank, .blankHead, .score{
     display: none;
   }
   .keyboard{
@@ -304,15 +325,12 @@
   .hangman{
     border-radius: 0;
   }
-  .hangWord{
-    display: flex;
-  }
-  .hangblankHead{
+  .hangblankHead, .mobileIcon, .hangWord{
     display: flex;
   }
 }
 
-@media only screen and (max-width: 750px) and (min-width: 601px) {
+@media only screen and (max-width: 790px) and (min-width: 601px) {
   .gameOver{
     width: 80vw;
   }
