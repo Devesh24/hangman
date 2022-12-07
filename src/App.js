@@ -21,14 +21,13 @@ function App() {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
-
+  
+  let word = ""
   const [wordObj, setWordObj] = useState(() => {
     return Words[Math.floor(Math.random() * Words.length)];
   });
-  const [word, setWord] = useState(wordObj.name.toUpperCase())
-  useEffect(()=>{
-    setWord(wordObj.name.toUpperCase())
-  }, [wordObj])
+  word = wordObj.name.toUpperCase()
+  
 
   const [score, setScore] = useState(0)
   const wordSet = () => {
@@ -65,6 +64,22 @@ function App() {
       visible = true;
     }
 
+    useEffect(() => {
+      const handler = (elem) => {
+        const key = elem.key
+
+        if(!key.match(/^[a-z]$/)) return
+        elem.preventDefault()
+        addLetter(key.toUpperCase())
+      }
+
+      document.addEventListener("keypress", handler)
+
+      return ()=>{
+        document.removeEventListener("keypress", handler)
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [guessedLetters])
     
   return (
     <>
