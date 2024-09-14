@@ -1,12 +1,12 @@
-import React from "react";
 import Word from "./Word";
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
+import { useState } from "react";
 
-export default function Hangman(props) {
+export default function Hangman({wrongGuess, word, guessedLetters, score, hint}) {
   
   //for popover
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -15,28 +15,30 @@ export default function Hangman(props) {
   };
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
-
+  
   return (
     <>
       <div className="hangman">
-        <div className="hangblankHead">
-          <div>Guess an Animal</div>
-          <div>Score: {props.score}</div>
+        <div className="mobileScoreBox">
+          <div>Guess a Famous Personality</div>
+          <div>Current Score: {score}</div>
         </div>
         <div className="top" />
         <div className="hanger" />
         <div className="stand" />
         <div className="base" />
-        <div className="head" style={{visibility: props.wrongGuess.length>=1 ? "visible" : "hidden"}} />
-        <div className="neck" style={{visibility: props.wrongGuess.length>=2 ? "visible" : "hidden"}} />
-        <div className="lefthand" style={{visibility: props.wrongGuess.length>=3 ? "visible" : "hidden"}} />
-        <div className="righthand" style={{visibility: props.wrongGuess.length>=4 ? "visible" : "hidden"}} />
-        <div className="leftleg" style={{visibility: props.wrongGuess.length>=5 ? "visible" : "hidden"}} />
-        <div className="rightleg" style={{visibility: props.wrongGuess.length===6 ? "visible" : "hidden"}} />
+        <div className="head" style={{visibility: wrongGuess.length>=1 ? "visible" : "hidden"}} />
+        <div className="neck" style={{visibility: wrongGuess.length>=2 ? "visible" : "hidden"}} />
+        <div className="lefthand" style={{visibility: wrongGuess.length>=3 ? "visible" : "hidden"}} />
+        <div className="righthand" style={{visibility: wrongGuess.length>=4 ? "visible" : "hidden"}} />
+        <div className="leftleg" style={{visibility: wrongGuess.length>=5 ? "visible" : "hidden"}} />
+        <div className="rightleg" style={{visibility: wrongGuess.length===6 ? "visible" : "hidden"}} />
         <div className="hangWord" >
-          <Word word={props.word} guessedLetters={props.guessedLetters}/>
+          <Word word={word} guessedLetters={guessedLetters}/>
         </div>
-        <span className="blankHeadIcon mobileIcon" aria-describedby={id} variant="contained" onClick={handleClick}>💡</span>
+        <span className="hintButton mobileIcon" aria-describedby={id} variant="contained" onClick={handleClick}>
+          <i class="fa-solid fa-lightbulb"></i>
+        </span>
         <Popover
           id={id}
           open={open}
@@ -51,7 +53,7 @@ export default function Hangman(props) {
             horizontal: 'center',
           }}
         >
-          <Typography sx={{ p: 2 }}>{props.hint}</Typography>
+          <Typography sx={{ p: 2 }}>{hint}</Typography>
         </Popover>
       </div>
     </>

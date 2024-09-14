@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function Word(props) {
+export default function Word({word, guessedLetters}) {
   return (
     <>
-      {props.word.split("").map((letter, ind) => {
-          return <span className="letter" key={ind}>
-                  <span style={{visibility: props.guessedLetters.includes(letter) ? "visible" : "hidden"}}>{letter}</span>
-              </span>
-      })}
+      {word.split("").map((letter, ind) => (
+        <span className="letter" key={ind}>
+          <span style={{visibility: guessedLetters.includes(letter) ? "visible" : "hidden"}}>{letter}</span>
+        </span>
+      ))}
     </>
   );
 }

@@ -8,6 +8,6 @@
 }
 
 body{
-  height: 100vh;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(112, 17, 195) 0%, rgba(0,134,255,1) 100%);
+  min-height: 100vh;
+  background: linear-gradient(90deg, #152238 0%, #23395d 0%, #1c2e4a 100%);
 }

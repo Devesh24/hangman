@@ -1,6 +1,4 @@
-import React from "react";
-
-let alphabets = [
+const alphabets = [
   "A",
   "B",
   "C",
@@ -29,22 +27,20 @@ let alphabets = [
   "Z",
 ];
 
-export default function Keyboard(props) {
+export default function Keyboard({addLetter, guessedLetters}) {
   return (
     <>
       <div className="keyboard">
-        {alphabets.map((elem, ind) => {
-          return (
-            <button
-              disabled={props.guessedLetters.includes(elem) ? "disabled" : ""}
-              className="key"
-              onClick={() => props.addLetter(elem)}
-              key={ind}
-            >
-              {elem}
-            </button>
-          );
-        })}
+        {alphabets.map((elem, ind) => (
+          <button
+            disabled={guessedLetters.includes(elem) ? "disabled" : ""}
+            className="key"
+            onClick={() => addLetter(elem)}
+            key={ind}
+          >
+            {elem}
+          </button>
+        ))}
       </div>
     </>
   );
